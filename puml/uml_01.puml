@@ -1,0 +1,38 @@
+@startuml
+  class OaSystemApplication [[java:org.example.OASystem.OaSystemApplication]] {
+    +{static} main(args: String[]): void
+  }
+  note left
+  	メインクラス
+  end note
+
+  class TopController [[java:org.example.OASystem.top.TopController]] {
+    +getTop(): String
+  }
+  note top
+  	コントローラークラス
+  end note
+  
+  note left of TopController::getTop
+  	GetMappingアノテーションの引数と
+  	URL末尾の文字列が一致したら、ここへ処理が飛んでくる
+  	"/top"を引数に指定しているので
+  	localhost:8080/top/
+  	とURLを打つと、ここへ処理が飛んでくる
+  	
+  	戻り値は、
+  	src/main/resources/templates
+  	からの相対パス
+  	今回はtopを戻り値としているので
+  	src/main/resources/templates/top.html
+  	へ遷移する
+  end note
+  
+	Object top.html {
+		<color:royalBlue>HTMLファイル</color>
+	}
+	
+	top.html <|-left- TopController : 画面遷移
+		note on link : URL末尾が"/top"なら、getTopメソッドにより,top.htmlへ遷移
+
+@enduml
