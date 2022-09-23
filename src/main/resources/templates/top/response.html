@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>ResponsePage</title>
+</head>
+<body>
+	<h1>ResponsePage</h1>
+	<h2>受け取った文字を表示</h2>
+	<!-- th属性の値に${キー名}とすると、Modelクラスに登録された値を取得可能 -->
+	<p th:text="${sample}"></p>
+</body>
+</html>

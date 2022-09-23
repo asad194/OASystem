@@ -8,6 +8,10 @@
 <body>
 	<h1>OA</h1>
 	<h2>オシャレなアタマ</h2>
+	<form method="post" action="/top">
+		入力：<input type="text" name="text1" />
+		<input type="submit" value="クリック" />
+	</form>
 	<!-- ↓th:src属性により、staticディレクトリからのパスを指定可能 -->
 	<img th:src="@{/images/uml_01.png}">
 </body>
